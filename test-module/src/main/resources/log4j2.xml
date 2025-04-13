@@ -1,0 +1,15 @@
+<Configuration status="INFO">
+    <Appenders>
+        <KafkaAppender name="KafkaAppender"
+                       topic="test-logs"
+                       bootstrapServers="localhost:29092">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+        </KafkaAppender>
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="KafkaAppender"/>
+        </Root>
+    </Loggers>
+</Configuration>
